@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 320" width="100%" height="100%" aria-hidden="true">
+  <defs>
+    <linearGradient id="mapGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C9A24A" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#A68233" stop-opacity="0.65"/>
+    </linearGradient>
+    <pattern id="dotGrid" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#2866A0" opacity="0.15"/>
+    </pattern>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#dotGrid)"/>
+
+  <!-- African Continent Vector Silhouette with Subtle Network Grid Nodes -->
+  <path d="M 125,25 
+           C 145,22 185,25 205,40 
+           C 225,55 255,60 262,75 
+           C 270,90 275,115 270,135 
+           C 265,150 250,165 255,180 
+           C 260,195 272,205 268,220 
+           C 260,235 240,260 230,275 
+           C 220,290 215,310 205,320 
+           C 195,310 185,295 180,280 
+           C 175,265 165,245 160,230 
+           C 155,215 145,200 142,185 
+           C 140,170 135,160 125,155 
+           C 115,150 100,150 95,140 
+           C 90,130 98,120 108,110 
+           C 118,100 125,90 130,80 
+           C 135,70 140,58 148,45 
+           C 135,46 110,48 95,55 
+           C 80,62 65,75 50,85 
+           C 35,95 25,108 20,120 
+           C 18,135 22,148 30,155 
+           C 40,165 52,168 60,178 
+           C 70,190 75,205 85,215
+           C 95,225 105,240 115,250 
+           C 125,260 145,285 165,305 
+           C 175,315 190,320 198,310 
+           C 205,295 210,270 218,250 
+           C 225,230 240,210 245,190 
+           C 250,170 258,150 255,130 
+           C 250,110 240,90 230,75 
+           C 220,60 200,45 180,35 
+           C 160,25 140,25 125,25 Z" 
+        fill="#94A3B8" opacity="0.35"/>
+
+  <!-- Network Interconnection Nodes / Hubs -->
+  <!-- Banjul Node -->
+  <circle cx="28" cy="130" r="5" fill="#C9A24A"/>
+  <circle cx="28" cy="130" r="10" fill="none" stroke="#C9A24A" stroke-width="1.5" opacity="0.6"/>
+  <text x="38" y="134" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#091D38">Banjul</text>
+
+  <!-- Abuja Node -->
+  <circle cx="118" cy="142" r="5" fill="#C9A24A"/>
+  <circle cx="118" cy="142" r="10" fill="none" stroke="#C9A24A" stroke-width="1.5" opacity="0.6"/>
+  <text x="128" y="146" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#091D38">Abuja</text>
+
+  <!-- Corridor Connecting Banjul & Abuja -->
+  <line x1="28" y1="130" x2="118" y2="142" stroke="#2866A0" stroke-width="2" stroke-dasharray="4,3"/>
+</svg>

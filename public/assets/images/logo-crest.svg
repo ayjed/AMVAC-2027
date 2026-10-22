@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" aria-label="AMVAC 2027 Official Seal">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2D07C"/>
+      <stop offset="50%" stop-color="#C9A24A"/>
+      <stop offset="100%" stop-color="#9E7822"/>
+    </linearGradient>
+    <linearGradient id="navyInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E274A"/>
+      <stop offset="100%" stop-color="#061325"/>
+    </linearGradient>
+    <path id="textCircle" d="M 100, 100 m -72, 0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0" />
+    <path id="textCircleBottom" d="M 100, 100 m -62, 0 a 62,62 0 1,0 124,0 a 62,62 0 1,0 -124,0" />
+  </defs>
+
+  <!-- Outer Ring with Gold Border -->
+  <circle cx="100" cy="100" r="96" fill="url(#navyInner)" stroke="url(#goldGrad)" stroke-width="4"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <circle cx="100" cy="100" r="76" fill="#091D38" stroke="url(#goldGrad)" stroke-width="2"/>
+
+  <!-- Africa Silhouette (Stylized Geometric Vector) -->
+  <path d="M 94,56 
+           C 98,55 106,56 112,60 
+           C 118,63 125,64 128,68 
+           C 131,73 133,80 132,86 
+           C 131,90 126,94 128,98 
+           C 130,102 135,104 133,109 
+           C 130,115 124,122 120,128 
+           C 116,133 114,142 110,147 
+           C 107,151 104,151 101,146 
+           C 98,141 94,131 92,125 
+           C 90,119 86,114 85,108 
+           C 84,103 82,98 78,96 
+           C 74,93 69,93 67,90 
+           C 65,86 68,82 72,79 
+           C 77,75 80,72 83,67 
+           C 86,62 90,57 94,56 Z" 
+        fill="url(#goldGrad)" opacity="0.95" />
+
+  <!-- Road / Highway Meridian Ribbon Cutting Through -->
+  <path d="M 76,140 Q 100,100 124,60" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-dasharray="4,3" opacity="0.9"/>
+  <path d="M 70,143 Q 100,98 130,57" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.7"/>
+
+  <!-- Surrounding Stars -->
+  <g fill="url(#goldGrad)">
+    <polygon points="100,22 102,26 106,26 103,29 104,33 100,31 96,33 97,29 94,26 98,26" transform="scale(0.8) translate(25, -2)"/>
+    <polygon points="100,22 102,26 106,26 103,29 104,33 100,31 96,33 97,29 94,26 98,26" transform="rotate(45 100 100) scale(0.6) translate(65, 30)"/>
+    <polygon points="100,22 102,26 106,26 103,29 104,33 100,31 96,33 97,29 94,26 98,26" transform="rotate(-45 100 100) scale(0.6) translate(-65, 30)"/>
+    <polygon points="100,22 102,26 106,26 103,29 104,33 100,31 96,33 97,29 94,26 98,26" transform="rotate(90 100 100) scale(0.6) translate(65, 30)"/>
+    <polygon points="100,22 102,26 106,26 103,29 104,33 100,31 96,33 97,29 94,26 98,26" transform="rotate(-90 100 100) scale(0.6) translate(-65, 30)"/>
+  </g>
+
+  <!-- Typography Arc -->
+  <text font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700" fill="url(#goldGrad)" letter-spacing="1.8">
+    <textPath href="#textCircle" startOffset="50%" text-anchor="middle">
+      AFRICA MOTOR VEHICLE ADMINISTRATION
+    </textPath>
+  </text>
+  <text font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="800" fill="#FFFFFF" letter-spacing="3.5">
+    <textPath href="#textCircleBottom" startOffset="50%" text-anchor="middle">
+      • AMVAC 2027 •
+    </textPath>
+  </text>
+</svg>
