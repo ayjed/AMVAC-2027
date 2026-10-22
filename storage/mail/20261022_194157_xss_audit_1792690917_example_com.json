@@ -1,0 +1,7 @@
+{
+    "to": "<script>alert('XSS_AUDIT_NAME')</script> Chief Auditor <xss.audit.1792690917@example.com>",
+    "subject": "AMVAC 2027 Registration Received \u2014 Ref: AMVAC-2027-LGSULRCY",
+    "template": "registration_received",
+    "date": "2026-10-22 19:41:57",
+    "body": "\r\n            <h2>Africa Motor Vehicle Administration Conference 2027</h2>\r\n            <p>Dear <script>alert('XSS_AUDIT_NAME')</script> Chief Auditor,</p>\r\n            <p>Your registration for AMVAC 2027 has been received in <strong>pending payment</strong> status.</p>\r\n            <p><strong>Registration Reference:</strong> AMVAC-2027-LGSULRCY<br>\r\n            <strong>Category:</strong> International Delegate<br>\r\n            <strong>Fee:</strong> USD 50.00</p>\r\n            <p>To finalize your accreditation, please visit your reference portal to complete payment or submit transfer reference:<br>\r\n            <a href='http://localhost:8000/register?ref=AMVAC-2027-LGSULRCY'>http://localhost:8000/register?ref=AMVAC-2027-LGSULRCY</a></p>\r\n            <p>Kind regards,<br>AMVAC 2027 Conference Secretariat</p>\r\n        "
+}

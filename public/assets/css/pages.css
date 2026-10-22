@@ -1,0 +1,536 @@
+/* ==========================================================================
+   AMVAC 2027 — Page Specific Layouts Stylesheet
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Homepage: Hero Section
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  background-color: var(--navy-950);
+  background-image: 
+    linear-gradient(180deg, rgba(6, 19, 37, 0.88) 0%, rgba(9, 29, 56, 0.94) 100%),
+    url('/assets/images/hero-conference.jpg');
+  background-size: cover;
+  background-position: center top;
+  color: var(--white);
+  padding: var(--space-12) 0 var(--space-16);
+  border-bottom: 2px solid var(--gold-500);
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding: var(--space-16) 0 var(--space-20);
+  }
+}
+
+.hero-content {
+  max-width: 860px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--gold-400);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+}
+
+.hero-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--gold-500);
+}
+
+.hero-title {
+  color: var(--gold-400);
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  line-height: 1.12;
+  font-weight: 700;
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.hero-theme {
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--slate-100);
+  margin-bottom: var(--space-6);
+  font-weight: 400;
+}
+
+.hero-meta-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-8);
+  margin-bottom: var(--space-8);
+  padding: var(--space-4) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.9375rem;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.hero-meta-item svg {
+  width: 20px;
+  height: 20px;
+  color: var(--gold-400);
+  flex-shrink: 0;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+/* --------------------------------------------------------------------------
+   2. Homepage: Highlights Strip (3 Pillars)
+   -------------------------------------------------------------------------- */
+.highlights-strip {
+  margin-top: calc(-1 * var(--space-10));
+  position: relative;
+  z-index: 10;
+  margin-bottom: var(--space-12);
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .highlights-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.highlight-card {
+  background-color: var(--navy-900);
+  color: var(--white);
+  border: 1px solid rgba(201, 162, 74, 0.3);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.highlight-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-500);
+}
+
+.highlight-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(201, 162, 74, 0.15);
+  color: var(--gold-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.highlight-title {
+  color: var(--gold-400);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+}
+
+.highlight-desc {
+  font-size: 0.875rem;
+  color: var(--slate-300);
+  line-height: 1.45;
+}
+
+/* --------------------------------------------------------------------------
+   3. Homepage: Editorial Intro Section (Banjul Waterfront)
+   -------------------------------------------------------------------------- */
+.intro-section {
+  padding: var(--space-12) 0;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .intro-grid {
+    grid-template-columns: 1.1fr 1fr;
+  }
+}
+
+.intro-media {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--slate-200);
+  position: relative;
+}
+
+.intro-media img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.intro-media:hover img {
+  transform: scale(1.02);
+}
+
+/* --------------------------------------------------------------------------
+   4. Objectives Component: Canonical 8 Cards
+   -------------------------------------------------------------------------- */
+.objectives-section {
+  padding: var(--space-12) 0;
+  background-color: var(--surface-light);
+}
+
+.section-header-block {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--space-10);
+}
+
+.section-eyebrow {
+  color: var(--gold-600);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-2);
+}
+
+.objectives-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 640px) {
+  .objectives-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .objectives-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.objective-card {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.objective-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold-500);
+  box-shadow: var(--shadow-md);
+}
+
+.objective-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.objective-number-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  background-color: var(--gold-100);
+  color: var(--gold-600);
+  border: 1.5px solid var(--gold-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.875rem;
+}
+
+.objective-icon-subtle {
+  color: var(--slate-400);
+}
+
+.objective-card-title {
+  color: var(--navy-900);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: var(--space-2);
+}
+
+.objective-card-text {
+  font-size: 0.875rem;
+  color: var(--slate-600);
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* --------------------------------------------------------------------------
+   5. Leadership Grid
+   -------------------------------------------------------------------------- */
+.leadership-section {
+  padding: var(--space-12) 0;
+  background-color: var(--white);
+  border-top: 1px solid var(--slate-200);
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .leadership-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.leader-card {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.leader-photo-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: var(--slate-100);
+  overflow: hidden;
+}
+
+.leader-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.leader-card-body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.leader-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  margin-bottom: var(--space-1);
+}
+
+.leader-title {
+  font-size: 0.8125rem;
+  color: var(--gold-600);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.leader-role {
+  font-size: 0.8125rem;
+  color: var(--slate-600);
+  line-height: 1.45;
+  margin-bottom: var(--space-3);
+  flex: 1;
+}
+
+.leader-status-tag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   6. Page Interior Hero Banner (About, Programme, Register, Contact)
+   -------------------------------------------------------------------------- */
+.page-banner {
+  background-color: var(--navy-950);
+  background-image: linear-gradient(180deg, rgba(6, 19, 37, 0.92) 0%, rgba(9, 29, 56, 0.98) 100%);
+  color: var(--white);
+  padding: var(--space-10) 0;
+  border-bottom: 2px solid var(--gold-500);
+}
+
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.8125rem;
+  color: var(--slate-400);
+  margin-bottom: var(--space-3);
+}
+
+.breadcrumb-nav a {
+  color: var(--gold-400);
+}
+
+.breadcrumb-nav span {
+  color: var(--slate-500);
+}
+
+.page-banner-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  color: var(--white);
+  margin-bottom: var(--space-2);
+}
+
+.page-banner-sub {
+  color: var(--slate-300);
+  font-size: 1rem;
+  max-width: 720px;
+}
+
+/* --------------------------------------------------------------------------
+   7. About Page: Canonical Full Objectives List (2 Columns)
+   -------------------------------------------------------------------------- */
+.about-full-objectives {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .about-full-objectives {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.objective-item-row {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  background: var(--white);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--slate-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.objective-row-number {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: var(--gold-500);
+  color: var(--navy-950);
+  font-weight: 800;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.objective-row-content h3 {
+  font-size: 1.05rem;
+  color: var(--navy-900);
+  margin-bottom: var(--space-1);
+}
+
+.objective-row-content p {
+  font-size: 0.875rem;
+  color: var(--slate-600);
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   8. Registration Interface States
+   -------------------------------------------------------------------------- */
+.reg-container {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.reg-state-box {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-8);
+}
+
+.reference-display-badge {
+  display: inline-block;
+  background-color: var(--navy-950);
+  color: var(--gold-400);
+  font-family: monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.08em;
+  border: 1px solid var(--gold-500);
+  margin: var(--space-3) 0;
+}
+
+.fee-selector-card {
+  border: 2px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-3);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.fee-selector-card:hover {
+  border-color: var(--blue-500);
+}
+
+.fee-selector-card.selected {
+  border-color: var(--gold-500);
+  background-color: var(--gold-100);
+}

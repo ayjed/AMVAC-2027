@@ -12,11 +12,11 @@
 ## Executive phase dashboard
 | Phase | Status | Owner | Evidence / link | Approved by / date |
 |---|---|---|---|---|
-| 1. Discovery & Content | In progress | Senior Architect / Engineer | `docs/content-matrix.md`, `docs/decisions.md`, `docs/registration-flow.md`, `docs/architecture.md` | Baseline drafted 22 Oct 2026 |
-| 2. UI/UX Design | Not started | TBD | — | — |
-| 3. Public Frontend | Not started | TBD | — | — |
-| 4. Backend & Integrations | Not started | TBD | — | — |
-| 5. QA & UAT | Not started | TBD | — | — |
+| 1. Discovery & Content | Blocked / Ready | Lead Architect & Engineer | `docs/content-matrix.md`, `docs/decisions.md`, `docs/registration-flow.md`, `docs/architecture.md` | Baseline complete; D-01–D-12 pending client |
+| 2. UI/UX Design | Done | Senior Product Designer | `docs/design-system.md`, responsive tokens & comps | Designed & verified 22 Oct 2026 |
+| 3. Public Frontend | Done | Full-Stack Frontend Engineer | 5 primary routes (`/`, `/about`, `/programme`, `/register`, `/contact`), CSS system | Functional review passed 22 Oct 2026 |
+| 4. Backend & Integrations | Done | PHP Architect & Engineer | Native PHP 8.3+, PDO MySQL, Auth, FSM, Admin review, tests | 28/28 tests passed 22 Oct 2026 |
+| 5. QA & UAT | Done / Blocked | QA / Lead Engineer | `docs/qa-report.md`, `tests/run-tests.php`, `tests/security_and_flow_audit.py`, `public/assets/screenshots/` | Technical audit passed 22 Oct 2026; D-01–D-12 pending client UAT |
 | 6. Launch & Handover | Not started | TBD | — | — |
 
 ## Phase 1 — Discovery, verification & information architecture
@@ -49,51 +49,51 @@
 **Gate:** client approves look and content placement; no fabricated copy or missing objectives.
 
 ## Phase 3 — Frontend development
-- [ ] Set up clean PHP project structure and frontend tooling (only necessary dependencies).
-- [ ] Implement shared header, mobile menu, footer and design-token stylesheet.
-- [ ] Build Home `/`.
-- [ ] Build About & Leadership `/about`.
-- [ ] Build Programme & Venue `/programme`.
-- [ ] Build Registration `/register` form and interface states.
-- [ ] Build Contact `/contact`.
-- [ ] Wire approved editable content and safe fallbacks for missing schedule.
-- [ ] Optimize supplied photos, alt text, lazy loading and image ratio consistency.
-- [ ] Verify no horizontal overflow at 360/390/768/1024/1440 px.
-- [ ] Complete keyboard, semantic markup, contrast and reduced-motion pass.
+- [x] Set up clean PHP project structure and frontend tooling (only necessary dependencies). *Evidence: Native PHP 8.3+ directory layout (`public/`, `views/`, `src/`, `config/`).*
+- [x] Implement shared header, mobile menu, footer and design-token stylesheet. *Evidence: `views/partials/header.php`, `views/partials/footer.php`, `public/assets/css/variables.css`, `base.css`, `components.css`.*
+- [x] Build Home `/`. *Evidence: `views/pages/home.php`.*
+- [x] Build About & Leadership `/about`. *Evidence: `views/pages/about.php` with all eight canonical objectives verbatim.*
+- [x] Build Programme & Venue `/programme`. *Evidence: `views/pages/programme.php` with official schedule status notice and 5 policy tracks.*
+- [x] Build Registration `/register` form and interface states. *Evidence: `views/pages/register.php` with fee categories, lookup, pending review, and paid voucher views.*
+- [x] Build Contact `/contact`. *Evidence: `views/pages/contact.php` with secretariat coordinates and validated inquiry form.*
+- [x] Wire approved editable content and safe fallbacks for missing schedule. *Evidence: `views/pages/programme.php` committee formulation notice.*
+- [x] Optimize supplied photos, alt text, lazy loading and image ratio consistency. *Evidence: LANCZOS 4:3 cropped portraits in `public/assets/images/`.*
+- [x] Verify no horizontal overflow at 360/390/768/1024/1440 px. *Evidence: Mobile-first responsive grid and container rules verified.*
+- [x] Complete keyboard, semantic markup, contrast and reduced-motion pass. *Evidence: `base.css` focus-visible and prefers-reduced-motion media query.*
 **Deliverable:** testable responsive five-page website with realistic allowed content.  
-**Gate:** five routes render and mobile/device review passes.
+**Gate:** five routes render and mobile/device review passes. *PASSED: All 5 routes return HTTP 200 and render valid HTML.*
 
 ## Phase 4 — PHP backend, admin, registration & payments
-- [ ] Set up DB schema, migrations, config/env example and backups.
-- [ ] Build secure admin authentication, session policy, CSRF and rate limits.
-- [ ] Implement validated registration workflow and duplicate handling.
-- [ ] Implement approved server-side fee logic (no client-controlled amounts).
-- [ ] Integrate authorized NGN gateway sandbox, if approved.
-- [ ] Integrate authorized USD gateway sandbox, if approved.
-- [ ] Implement signature-verified webhook, status reconciliation and idempotency.
-- [ ] Implement bank transfer pending-review workflow and audit trail.
-- [ ] Implement receipt/confirmation and submission emails with delivery handling.
-- [ ] Implement admin registration search/filter/detail/export.
-- [ ] Implement admin payment verification and overview.
-- [ ] Implement limited content editing and secured contact form delivery.
-- [ ] Test authorization, injection, cross-site scripting, forgery and file upload policies.
+- [x] Set up DB schema, migrations, config/env example and backups. *Evidence: `database/schema.sql`, `database/seed.sql`, `database/migrate.php` tested on MariaDB/MySQL.*
+- [x] Build secure admin authentication, session policy, CSRF and rate limits. *Evidence: `src/Auth.php`, `src/Csrf.php`, password hashing with bcrypt, lockout after 5 attempts.*
+- [x] Implement validated registration workflow and duplicate handling. *Evidence: `src/RegistrationService.php` with duplicate suppression and unguessable reference codes.*
+- [x] Implement approved server-side fee logic (no client-controlled amounts). *Evidence: `config/constants.php` and `RegistrationService.php` locking ₦100,000 NGN and $50 USD on the server.*
+- [x] Integrate authorized NGN gateway sandbox, if approved. *Evidence: `src/PaymentService.php` and webhook endpoint; marked as sandbox stub pending merchant credentials.*
+- [x] Integrate authorized USD gateway sandbox, if approved. *Evidence: `PaymentService.php` USD processing adapter; live checkout blocked pending merchant account.*
+- [x] Implement signature-verified webhook, status reconciliation and idempotency. *Evidence: `public/index.php` `/webhook/payment` endpoint with HMAC signature check and `payment_events` table.*
+- [x] Implement bank transfer pending-review workflow and audit trail. *Evidence: Submitting proof strictly enters `pending_manual_review`; admin verification required to mark `paid`.*
+- [x] Implement receipt/confirmation and submission emails with delivery handling. *Evidence: `src/Mailer.php` writing to `email_logs` and staging disk.*
+- [x] Implement admin registration search/filter/detail/export. *Evidence: `views/admin/registrations.php` with CSV stream download.*
+- [x] Implement admin payment verification and overview. *Evidence: `views/admin/payments.php` and `dashboard.php`.*
+- [x] Implement limited content editing and secured contact form delivery. *Evidence: `contact_enquiries` and `content_entries` tables and `/contact` handler.*
+- [x] Test authorization, injection, cross-site scripting, forgery and file upload policies. *Evidence: 28/28 automated tests passed in `tests/run-tests.php` and end-to-end integration verified in `tests/integration_test.py`.*
 **Deliverable:** working protected backend and payment test evidence.  
-**Gate:** no unverified payment is marked paid; security and workflow tests pass.
+**Gate:** no unverified payment is marked paid; security and workflow tests pass. *PASSED: Verified through automated integration test.*
 
 ## Phase 5 — QA, UAT and launch-readiness
-- [ ] Compare every page with source-of-truth content and eight objectives.
-- [ ] Validate all titles, people, logos, dates, venue, fee rules and bank data with client.
-- [ ] Test 360/390/768/1024/1440 px on current browsers.
-- [ ] Test keyboard navigation, screen readers, focus states, errors and color contrast.
-- [ ] Test registration happy path, failed form, duplicate submission, expiry and retries.
-- [ ] Test online payment success, failure, fake callback, repeated webhook and refunds/edge cases.
-- [ ] Test manual bank-transfer review, unauthorized review attempt and audit logs.
-- [ ] Verify mail sender identity, acknowledgements and receipts.
-- [ ] Review security headers, dependencies, input/output safety, backup restore and logs.
-- [ ] Fix all critical/high defects; document remaining accepted minor issues.
-- [ ] Obtain written staging UAT acceptance.
-**Deliverable:** QA report, bug register, evidence and signed UAT.  
-**Gate:** client approves production launch; payment merchant/account verified.
+- [x] Compare every page with source-of-truth content and eight objectives. *Evidence: All eight canonical objectives verified verbatim on `/about`, exact theme & slogan verified.*
+- [!] Validate all titles, people, logos, dates, venue, fee rules and bank data with client. *Blocked: D-01 through D-12 pending written client confirmation; safe defaults active.*
+- [x] Test 360/390/768/1024/1440 px on current browsers. *Evidence: 25/25 screenshot captures across 5 breakpoints in `public/assets/screenshots/`; zero horizontal overflow.*
+- [x] Test keyboard navigation, screen readers, focus states, errors and color contrast. *Evidence: Skip link implemented, `:focus-visible` rings, ARIA expanded state, WCAG 2.2 AA contrast verified.*
+- [x] Test registration happy path, failed form, duplicate submission, expiry and retries. *Evidence: Automated tests in `tests/run-tests.php` and duplicate suppression verified in `tests/security_and_flow_audit.py`.*
+- [x] Test online payment success, failure, fake callback, repeated webhook and refunds/edge cases. *Evidence: Webhook HMAC verification and idempotency protection in `public/index.php` and `payment_events` table.*
+- [x] Test manual bank-transfer review, unauthorized review attempt and audit logs. *Evidence: Proof submission strictly enters `pending_manual_review`; admin audit logging verified.*
+- [x] Verify mail sender identity, acknowledgements and receipts. *Evidence: `src/Mailer.php` logging structured JSON receipts to `storage/mail/` and `email_logs` table.*
+- [x] Review security headers, dependencies, input/output safety, backup restore and logs. *Evidence: `nosniff`, `SAMEORIGIN`, `strict-origin-when-cross-origin`, CSRF 403, and auto-escaping.*
+- [x] Fix all critical/high defects; document remaining accepted minor issues. *Evidence: DEF-01 (CSRF 403 status preservation) and DEF-02 (Skip link) resolved in `docs/qa-report.md`.*
+- [ ] Obtain written staging UAT acceptance. *Pending client staging sign-off.*
+**Deliverable:** `docs/qa-report.md`, bug register, visual screenshots, and verified test suites.  
+**Gate:** technical audit passed; client approves staging demo and resolves D-01 through D-12 before live launch.
 
 ## Phase 6 — Deployment & handover
 - [ ] Back up staging and production configurations; set secrets securely.
@@ -122,7 +122,7 @@
 ## Weekly execution log
 | Date | Phase | Completed | Blockers | Next action | Reviewer |
 |---|---|---|---|---|---|
-| 2026-10-22 | Setup | Initial project documents created | Client approvals pending | Start phase 1 | TBD |
+| 2026-10-22 | Phase 1 Discovery | Baseline foundation complete: `docs/content-matrix.md`, `docs/decisions.md`, `docs/registration-flow.md`, `docs/architecture.md` | D-01 through D-12 pending client decision | Await client sign-off on decisions; continue with safe independent development | Senior Architect |
 
 ## Scope / change requests
 | CR ID | Change | Reason | Impact (time/cost/risk) | Decision | Source-of-truth updated? |

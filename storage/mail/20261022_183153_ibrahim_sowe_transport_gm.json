@@ -1,0 +1,7 @@
+{
+    "to": "Director Ibrahim Sowe <ibrahim.sowe@transport.gm>",
+    "subject": "AMVAC 2027 \u2014 Bank Transfer Proof Received (AMVAC-2027-YC6G7BPS)",
+    "template": "bank_proof_queued",
+    "date": "2026-10-22 18:31:53",
+    "body": "\n            <h2>Africa Motor Vehicle Administration Conference 2027</h2>\n            <p>Dear Director Ibrahim Sowe,</p>\n            <p>We have received your bank transfer reference: <strong>BLMB-BANJUL-2027-0091</strong> for registration <strong>AMVAC-2027-YC6G7BPS</strong>.</p>\n            <p>Your status is currently <strong>Under Administrative Review</strong>. Our finance team is reconciling this reference against Bloom Bank Africa account records. Once verified, your official accreditation pass and confirmation voucher will be issued.</p>\n            <p>You may check your status anytime at:<br>\n            <a href='http://localhost:8000/register?ref=AMVAC-2027-YC6G7BPS'>http://localhost:8000/register?ref=AMVAC-2027-YC6G7BPS</a></p>\n            <p>Secretariat Desk, AMVAC 2027</p>\n        "
+}
