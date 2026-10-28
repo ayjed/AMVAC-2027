@@ -1,8 +1,6 @@
 -- AMVAC 2027 Database Schema
 -- Compatible with MySQL 8.0+ and MariaDB 10.4+
-
-CREATE DATABASE IF NOT EXISTS amvac2027 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE amvac2027;
+-- If importing via phpMyAdmin/cPanel, select your database before importing.
 
 -- 1. Administrators Table
 CREATE TABLE IF NOT EXISTS admins (

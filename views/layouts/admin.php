@@ -24,10 +24,12 @@ $user = Auth::user();
 <body class="admin-body">
 
   <header class="admin-header">
-    <a href="/admin" class="admin-brand">
-      <img src="/assets/images/logo-crest.svg" alt="AMVAC Seal" width="32" height="32">
-      <span>AMVAC 2027 Secretariat Admin</span>
-    </a>
+    <div class="admin-brand-group">
+      <a href="/admin/dashboard" class="admin-brand" aria-label="AMVAC 2027 Admin Home">
+        <img src="/assets/images/logo-official-white.png" alt="AMVAC 2027 Logo" class="admin-brand-logo" height="38">
+      </a>
+      <span class="admin-portal-badge">Secretariat Portal</span>
+    </div>
 
     <?php if (Auth::check()): ?>
       <nav class="admin-nav-cluster">
@@ -36,10 +38,11 @@ $user = Auth::user();
         <a href="/admin/payments" class="admin-nav-link <?= ($currentAdminNav === 'payments' ? 'active' : '') ?>">Payment Verification</a>
         <a href="/admin/enquiries" class="admin-nav-link <?= ($currentAdminNav === 'enquiries' ? 'active' : '') ?>">Enquiries</a>
         <a href="/admin/audit" class="admin-nav-link <?= ($currentAdminNav === 'audit' ? 'active' : '') ?>">Audit Logs</a>
+        <a href="/" target="_blank" rel="noopener" class="admin-nav-link admin-nav-public">Public Site &nearr;</a>
         
         <div class="admin-user-pill">
-          <span><?= e($user['name'] ?? 'Admin') ?></span>
-          <a href="/admin/logout" class="btn btn-outline-white btn-sm" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Sign Out</a>
+          <span class="admin-user-name"><?= e($user['name'] ?? 'Admin') ?></span>
+          <a href="/admin/logout" class="btn btn-outline-white btn-sm btn-admin-logout">Sign Out</a>
         </div>
       </nav>
     <?php endif; ?>

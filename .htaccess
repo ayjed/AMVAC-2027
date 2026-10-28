@@ -1,0 +1,34 @@
+# ==============================================================================
+# AMVAC 2027 — Root Web Server Configuration (Apache / LiteSpeed)
+# ==============================================================================
+# Allows seamless deployment in:
+# 1) DocumentRoot set to project root (e.g. cPanel public_html)
+# 2) DocumentRoot set to /public
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 1. Deny direct access to protected directories and configuration files
+    RewriteRule ^(\.env|\.git|config|database|src|storage|views|tests|docs)/ - [F,L,NC]
+    RewriteRule \.(sql|md|log|json|env|example|sh|bat)$ - [F,L,NC]
+
+    # 2. Map direct static asset requests to public/assets
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(assets/.*)$ public/$1 [L]
+
+    # 3. Rewrite all other requests to public/
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes
+
+# Fallback security response headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

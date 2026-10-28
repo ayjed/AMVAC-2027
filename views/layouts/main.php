@@ -41,9 +41,7 @@ $currentRoute = $currentRoute ?? '/';
 
   <!-- Main View Area -->
   <main class="main-content" id="main-content">
-    <div class="container" style="padding-top: var(--space-4);">
-      <?php require __DIR__ . '/../partials/alerts.php'; ?>
-    </div>
+    <?php require __DIR__ . '/../partials/alerts.php'; ?>
     <?= $content ?>
   </main>
 

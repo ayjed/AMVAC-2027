@@ -138,9 +138,13 @@ $metaDescription = 'Explore the thematic focus tracks, venue details in Banjul, 
       </div>
 
       <div class="intro-media">
-        <img src="/assets/images/banjul-waterfront.jpg" alt="Banjul Coastal View" width="600" height="360">
-        <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(0deg, rgba(6,19,37,0.85) 0%, transparent 100%); padding: var(--space-4) var(--space-5); color: var(--white); font-size: 0.8125rem;">
-          Coastal Capital of The Gambia — Host Nation for AMVAC 2027
+        <img src="/assets/images/banjul-waterfront.jpg" alt="Banjul Coastal View" width="600" height="360" loading="lazy">
+        <div class="media-location-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>Banjul, The Gambia</span>
         </div>
       </div>
     </div>

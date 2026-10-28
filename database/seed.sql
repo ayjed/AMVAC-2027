@@ -1,7 +1,5 @@
 -- AMVAC 2027 Database Seed Data
 
-USE amvac2027;
-
 -- Default Super Administrator (admin@amvac2027.org / ChangeMe2027!Secure)
 INSERT INTO admins (name, email, password_hash, role, is_active)
 VALUES (

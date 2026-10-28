@@ -2,6 +2,7 @@ import urllib.request
 import urllib.parse
 import http.cookiejar
 import re
+import time
 
 cj = http.cookiejar.CookieJar()
 opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
@@ -17,7 +18,7 @@ print('1. Register page loaded, CSRF token:', csrf_token[:8] + '...')
 data = urllib.parse.urlencode({
     'csrf_token': csrf_token,
     'full_name': 'Director Ibrahim Sowe',
-    'email': 'ibrahim.sowe@transport.gm',
+    'email': f'ibrahim.sowe.{int(time.time())}@transport.gm',
     'phone': '+220 788 1234',
     'country': 'The Gambia',
     'organization': 'Ministry of Transport, Works and Infrastructure',
@@ -73,7 +74,10 @@ print('4. Admin logged in, redirected to:', resp_login.geturl())
 
 # 5. Admin Payment Verification
 payments_page = admin_opener.open('http://127.0.0.1:8000/admin/payments').read().decode('utf-8')
-review_id_match = re.search(r'openReviewModal\((\d+),\s*\'[^\']+\',\s*\'approve\'\)', payments_page)
+review_id_match = re.search(r'openReviewModal\((\d+),\s*[\'"]' + re.escape(ref) + r'[\'"]', payments_page)
+if not review_id_match:
+    # fallback to first review modal if table rows sorted differently
+    review_id_match = re.search(r'openReviewModal\((\d+),\s*\'[^\']+\',\s*\'approve\'\)', payments_page)
 review_id = review_id_match.group(1) if review_id_match else '1'
 admin_csrf2 = re.search(r'name="csrf_token" value="([a-f0-9]+)"', payments_page).group(1)
 

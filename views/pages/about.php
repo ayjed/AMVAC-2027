@@ -143,39 +143,36 @@ $metaDescription = 'Learn about the mission, organizers, confirmed leadership, a
       <!-- 1. President Adama Barrow -->
       <div class="leader-card">
         <div class="leader-photo-wrap">
-          <img src="/assets/images/adama-barrow.jpg" alt="His Excellency Adama Barrow" width="480" height="360">
+          <img src="/assets/images/adama-barrow.jpg" alt="His Excellency Adama Barrow" width="480" height="480" loading="lazy">
         </div>
         <div class="leader-card-body">
           <div class="leader-name">His Excellency Adama Barrow</div>
           <div class="leader-title">President of The Republic of The Gambia</div>
           <div class="leader-role">Invited Host Head of State. High-level protocol confirmation undergoing official verification.</div>
-          <span class="leader-status-tag badge-warning">Protocol Pending</span>
         </div>
       </div>
 
       <!-- 2. Amb. Prince Fidelis Nnadi -->
       <div class="leader-card">
         <div class="leader-photo-wrap">
-          <img src="/assets/images/fidelis-nnadi.jpg" alt="Amb. Prince Fidelis Nnadi" width="480" height="360">
+          <img src="/assets/images/fidelis-nnadi.jpg" alt="Amb. Prince Fidelis Nnadi" width="480" height="480" loading="lazy">
         </div>
         <div class="leader-card-body">
           <div class="leader-name">Amb. Prince Fidelis Nnadi</div>
           <div class="leader-title">Executive Director, APRI - Nigeria</div>
           <div class="leader-role">Conference Host & Lead Consultant on Motor Vehicle Administration.</div>
-          <span class="leader-status-tag badge-success">Conference Convener</span>
         </div>
       </div>
 
       <!-- 3. Njie Baldeh -->
       <div class="leader-card">
         <div class="leader-photo-wrap">
-          <img src="/assets/images/njie-baldeh.jpg" alt="Njie Baldeh" width="480" height="360">
+          <img src="/assets/images/njie-baldeh.jpg" alt="Njie Baldeh" width="480" height="480" loading="lazy">
         </div>
         <div class="leader-card-body">
           <div class="leader-name">Njie Baldeh</div>
           <div class="leader-title">Executive Secretary</div>
           <div class="leader-role">Road Safety Driver Standard Association of The Gambia.</div>
-          <span class="leader-status-tag badge-success">Host Country Co-Organizer</span>
         </div>
       </div>
     </div>

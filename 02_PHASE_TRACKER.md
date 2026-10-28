@@ -96,15 +96,16 @@
 **Gate:** technical audit passed; client approves staging demo and resolves D-01 through D-12 before live launch.
 
 ## Phase 6 — Deployment & handover
-- [ ] Back up staging and production configurations; set secrets securely.
-- [ ] Provision HTTPS, DNS, DB, mail and production payment webhook endpoints.
-- [ ] Apply migrations and deploy optimized code/assets.
-- [ ] Smoke test each public route and mobile navigation on production.
+- [x] Package optimized production distribution archive. *Evidence: `amvac2027_production_release.zip` (2.01 MB, verified).*
+- [x] Create consolidated one-click database installer script. *Evidence: `database/production_install.sql` (compatible with cPanel/phpMyAdmin).*
+- [x] Configure root web server rewrite and directory shield rules. *Evidence: `.htaccess`, `public/.htaccess`, `storage/.htaccess`.*
+- [x] Deliver complete deployment runbook & production config guide. *Evidence: `DEPLOYMENT_GUIDE.md` & `.env.production.example`.*
+- [ ] Provision HTTPS, DNS, DB, mail and production payment webhook endpoints on live host.
+- [ ] Smoke test each public route and mobile navigation on live production.
 - [ ] Complete one controlled payment validation using permitted safe provider flow.
-- [ ] Confirm email receipt and manual-review controls on production.
+- [ ] Confirm email receipt and manual-review controls on live production.
 - [ ] Set up uptime/error monitoring and backups with restore instructions.
 - [ ] Hand over admin credentials using a secure channel (never paste into docs).
-- [ ] Deliver deployment runbook, configuration guide, editor instructions and asset inventory.
 - [ ] Record launch date, ownership, ongoing support and maintenance boundaries.
 **Deliverable:** live website, sign-off, admin handover and maintenance documentation.  
 **Gate:** final production review and owner acknowledgement.

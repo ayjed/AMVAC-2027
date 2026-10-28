@@ -1,0 +1,7 @@
+{
+    "to": "Hon. Tamper Test <tamper.audit.1792702697@example.com>",
+    "subject": "AMVAC 2027 \u2014 Bank Transfer Proof Received (AMVAC-2027-N3UJZK85)",
+    "template": "bank_proof_queued",
+    "date": "2026-10-22 22:58:17",
+    "body": "\r\n            <h2>Africa Motor Vehicle Administration Conference 2027</h2>\r\n            <p>Dear Hon. Tamper Test,</p>\r\n            <p>We have received your bank transfer reference: <strong>FAKE-TELLER-9999</strong> for registration <strong>AMVAC-2027-N3UJZK85</strong>.</p>\r\n            <p>Your status is currently <strong>Under Administrative Review</strong>. Our finance team is reconciling this reference against Bloom Bank Africa account records. Once verified, your official accreditation pass and confirmation voucher will be issued.</p>\r\n            <p>You may check your status anytime at:<br>\r\n            <a href='http://localhost:8000/register?ref=AMVAC-2027-N3UJZK85'>http://localhost:8000/register?ref=AMVAC-2027-N3UJZK85</a></p>\r\n            <p>Secretariat Desk, AMVAC 2027</p>\r\n        "
+}

@@ -15,16 +15,22 @@ try {
     $dsnRoot = "mysql:host={$dbConfig['host']};port={$dbConfig['port']};charset={$dbConfig['charset']}";
     $pdoRoot = new PDO($dsnRoot, $dbConfig['username'], $dbConfig['password'], $dbConfig['options']);
     
-    echo "[1/4] Ensuring database '{$dbConfig['database']}' exists...\n";
-    $pdoRoot->exec("CREATE DATABASE IF NOT EXISTS `{$dbConfig['database']}` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
+    try {
+        echo "[1/4] Checking/ensuring database '{$dbConfig['database']}' exists...\n";
+        $pdoRoot->exec("CREATE DATABASE IF NOT EXISTS `{$dbConfig['database']}` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
+    } catch (PDOException $e) {
+        // In shared hosting (cPanel), user may not have CREATE DATABASE privileges if DB already created
+        echo "      Notice: {$e->getMessage()} (proceeding with existing database)\n";
+    }
 
     // Connect to target DB
     $dsn = "mysql:host={$dbConfig['host']};port={$dbConfig['port']};dbname={$dbConfig['database']};charset={$dbConfig['charset']}";
     $pdo = new PDO($dsn, $dbConfig['username'], $dbConfig['password'], $dbConfig['options']);
 
-    echo "[2/4] Executing schema.sql...\n";
-    $schemaSql = file_get_contents(__DIR__ . '/schema.sql');
-    $pdo->exec($schemaSql);
+    echo "[2/4] Executing production_install.sql...\n";
+    $sqlFile = file_exists(__DIR__ . '/production_install.sql') ? __DIR__ . '/production_install.sql' : __DIR__ . '/schema.sql';
+    $installSql = file_get_contents($sqlFile);
+    $pdo->exec($installSql);
     echo "      Tables created/verified successfully.\n";
 
     echo "[3/4] Executing seed.sql...\n";
