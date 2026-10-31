@@ -30,7 +30,7 @@ define('AMVAC_ORGANIZERS', [
         'status' => 'APPROVED'
     ],
     [
-        'name' => 'Road Safety Driver Standard Association of The Gambia',
+        'name' => 'Road Safety and Driving Standard Association of The Gambia',
         'country' => 'The Gambia',
         'role' => 'Host Country Co-Organizer',
         'status' => 'APPROVED'
@@ -45,6 +45,27 @@ define('AMVAC_ORGANIZERS', [
 
 // Leadership Profiles
 define('AMVAC_LEADERS', [
+    'evariste_ndayishimiye' => [
+        'name' => 'His Excellency Évariste Ndayishimiye',
+        'title' => 'President of Burundi & Chairperson of the African Union',
+        'role' => 'African Union Continental Leadership & Patronage',
+        'image' => '/assets/images/evariste-ndayishimiye.jpg',
+        'status' => 'APPROVED'
+    ],
+    'adama_barrow' => [
+        'name' => 'His Excellency Adama Barrow',
+        'title' => 'President of The Republic of The Gambia',
+        'role' => 'Host Head of State (Protocol Verification In Progress)',
+        'image' => '/assets/images/adama-barrow.jpg',
+        'status' => 'PENDING CLIENT APPROVAL' // D-04
+    ],
+    'shehu_mohammed' => [
+        'name' => 'Shehu Mohammed, FCA, CPFA, mni',
+        'title' => 'Corps Marshal, Federal Road Safety Corps (FRSC)',
+        'role' => 'Lead Federal Road Safety Agency, Nigeria',
+        'image' => '/assets/images/shehu-mohammed.jpg',
+        'status' => 'APPROVED'
+    ],
     'fidelis_nnadi' => [
         'name' => 'Amb. Prince Fidelis Nnadi',
         'title' => 'Executive Director, APRI - Nigeria',
@@ -54,17 +75,10 @@ define('AMVAC_LEADERS', [
     ],
     'njie_baldeh' => [
         'name' => 'Njie Baldeh',
-        'title' => 'Executive Secretary',
-        'role' => 'Road Safety Driver Standard Association of The Gambia',
+        'title' => 'Administrative Secretary',
+        'role' => 'Road Safety and Driving Standard Association of The Gambia',
         'image' => '/assets/images/njie-baldeh.jpg',
         'status' => 'APPROVED'
-    ],
-    'adama_barrow' => [
-        'name' => 'His Excellency Adama Barrow',
-        'title' => 'President of The Republic of The Gambia',
-        'role' => 'Host Head of State (Protocol Verification In Progress)',
-        'image' => '/assets/images/adama-barrow.jpg',
-        'status' => 'PENDING CLIENT APPROVAL' // D-04
     ]
 ]);
 

@@ -22,7 +22,7 @@
         <p class="footer-org-name">Accident Prevention and Rescue Initiative (APRI), Nigeria</p>
         
         <div class="footer-heading" style="margin-top: var(--space-4);">In collaboration with</div>
-        <p class="footer-org-name">Road Safety Driver Standard Association of The Gambia</p>
+        <p class="footer-org-name">Road Safety and Driving Standard Association of The Gambia</p>
       </div>
 
       <!-- Col 3: Quick Navigation -->

@@ -153,52 +153,108 @@ $pageTitle = 'AMVAC 2027 — Africa Motor Vehicle Administration Conference';
   </div>
 </section>
 
-<!-- 5. Conference Leadership Preview -->
-<section class="leadership-section">
+<!-- 5. Continental Leadership Carousel -->
+<section class="leadership-section" aria-label="Continental Leadership Carousel">
   <div class="container">
-    <div class="section-header-block">
-      <div class="section-eyebrow">Conveners & Leadership</div>
-      <h2 class="section-title">Conference Leadership</h2>
-      <p style="color: var(--slate-600);">
-        Distinguished leaders driving road safety administration and continental transport policy.
-      </p>
+    <div class="leadership-header-row">
+      <div class="leadership-header-content">
+        <div class="section-eyebrow">Conveners &amp; Leadership</div>
+        <h2 class="section-title">Continental Leadership</h2>
+        <p class="section-subtitle">
+          Distinguished Leaders &amp; Invited Dignitaries driving road safety administration and continental transport policy.
+        </p>
+      </div>
+
+      <div class="leadership-header-actions">
+        <div class="carousel-nav-buttons" role="group" aria-label="Carousel Navigation">
+          <button type="button" class="carousel-btn carousel-prev-btn" id="leaderPrevBtn" aria-label="Previous leadership profile" disabled>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button type="button" class="carousel-btn carousel-next-btn" id="leaderNextBtn" aria-label="Next leadership profile">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <div class="leadership-grid">
-      <!-- Leader 1: President Adama Barrow (With careful verification flag per D-04) -->
-      <div class="leader-card">
-        <div class="leader-photo-wrap">
-          <img src="/assets/images/adama-barrow.jpg" alt="His Excellency Adama Barrow" width="480" height="480" loading="lazy">
-        </div>
-        <div class="leader-card-body">
-          <div class="leader-name">His Excellency Adama Barrow</div>
-          <div class="leader-title">President of The Republic of The Gambia</div>
-          <div class="leader-role">Invited Host Head of State. High-level protocol confirmation undergoing official verification.</div>
-        </div>
-      </div>
+    <!-- Carousel Viewport & Horizontal Scroll Track -->
+    <div class="leadership-carousel-viewport">
+      <div class="leadership-carousel-track" id="leadershipTrack" tabindex="0" role="region" aria-label="Leadership profiles scroll track">
 
-      <!-- Leader 2: Amb. Prince Fidelis Nnadi -->
-      <div class="leader-card">
-        <div class="leader-photo-wrap">
-          <img src="/assets/images/fidelis-nnadi.jpg" alt="Amb. Prince Fidelis Nnadi" width="480" height="480" loading="lazy">
-        </div>
-        <div class="leader-card-body">
-          <div class="leader-name">Amb. Prince Fidelis Nnadi</div>
-          <div class="leader-title">Executive Director, APRI - Nigeria</div>
-          <div class="leader-role">Conference Host & Lead Consultant on Motor Vehicle Administration.</div>
-        </div>
-      </div>
+        <!-- Leader 1: Chairperson of the African Union -->
+        <article class="leader-carousel-card" role="group" aria-roledescription="slide" aria-label="1 of 5: His Excellency Évariste Ndayishimiye">
+          <div class="leader-carousel-photo">
+            <img src="/assets/images/evariste-ndayishimiye.jpg" alt="His Excellency Évariste Ndayishimiye" width="480" height="480" loading="lazy">
+          </div>
+          <div class="leader-carousel-body">
+            <h3 class="leader-carousel-name">His Excellency &Eacute;variste Ndayishimiye</h3>
+            <div class="leader-carousel-title">President of Burundi &amp; Chairperson of the African Union</div>
+            <p class="leader-carousel-role">African Union Continental Leadership &amp; Patronage.</p>
+          </div>
+        </article>
 
-      <!-- Leader 3: Njie Baldeh -->
-      <div class="leader-card">
-        <div class="leader-photo-wrap">
-          <img src="/assets/images/njie-baldeh.jpg" alt="Njie Baldeh" width="480" height="480" loading="lazy">
-        </div>
-        <div class="leader-card-body">
-          <div class="leader-name">Njie Baldeh</div>
-          <div class="leader-title">Executive Secretary</div>
-          <div class="leader-role">Road Safety Driver Standard Association of The Gambia (Host Association Co-Organizer).</div>
-        </div>
+        <!-- Leader 2: President Adama Barrow -->
+        <article class="leader-carousel-card" role="group" aria-roledescription="slide" aria-label="2 of 5: His Excellency Adama Barrow">
+          <div class="leader-carousel-photo">
+            <img src="/assets/images/adama-barrow.jpg" alt="His Excellency Adama Barrow" width="480" height="480" loading="lazy">
+          </div>
+          <div class="leader-carousel-body">
+            <h3 class="leader-carousel-name">His Excellency Adama Barrow</h3>
+            <div class="leader-carousel-title">President of The Republic of The Gambia</div>
+            <p class="leader-carousel-role">Invited Host Head of State. High-level protocol confirmation undergoing official verification.</p>
+          </div>
+        </article>
+
+        <!-- Leader 3: Nigeria FRSC Corps Marshal -->
+        <article class="leader-carousel-card" role="group" aria-roledescription="slide" aria-label="3 of 5: Corps Marshal Shehu Mohammed">
+          <div class="leader-carousel-photo">
+            <img src="/assets/images/shehu-mohammed.jpg" alt="Corps Marshal Shehu Mohammed" width="480" height="480" loading="lazy">
+          </div>
+          <div class="leader-carousel-body">
+            <h3 class="leader-carousel-name">Shehu Mohammed, <span style="font-size: 0.9em; font-weight: 500;">FCA, CPFA, mni</span></h3>
+            <div class="leader-carousel-title">Corps Marshal, Federal Road Safety Corps (FRSC)</div>
+            <p class="leader-carousel-role">Lead Statutory Road Safety &amp; Motor Vehicle Administration Agency, Nigeria.</p>
+          </div>
+        </article>
+
+        <!-- Leader 4: Amb. Prince Fidelis Nnadi -->
+        <article class="leader-carousel-card" role="group" aria-roledescription="slide" aria-label="4 of 5: Amb. Prince Fidelis Nnadi">
+          <div class="leader-carousel-photo">
+            <img src="/assets/images/fidelis-nnadi.jpg" alt="Amb. Prince Fidelis Nnadi" width="480" height="480" loading="lazy">
+          </div>
+          <div class="leader-carousel-body">
+            <h3 class="leader-carousel-name">Amb. Prince Fidelis Nnadi</h3>
+            <div class="leader-carousel-title">Executive Director, APRI - Nigeria</div>
+            <p class="leader-carousel-role">Conference Host &amp; Lead Consultant on Motor Vehicle Administration.</p>
+          </div>
+        </article>
+
+        <!-- Leader 5: Njie Baldeh -->
+        <article class="leader-carousel-card" role="group" aria-roledescription="slide" aria-label="5 of 5: Njie Baldeh">
+          <div class="leader-carousel-photo">
+            <img src="/assets/images/njie-baldeh.jpg" alt="Njie Baldeh" width="480" height="480" loading="lazy">
+          </div>
+          <div class="leader-carousel-body">
+            <h3 class="leader-carousel-name">Njie Baldeh</h3>
+            <div class="leader-carousel-title">Administrative Secretary</div>
+            <p class="leader-carousel-role">Road Safety and Driving Standard Association of The Gambia (Host Association Co-Organizer).</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- Minimal Progress Indicator & Dots -->
+    <div class="carousel-footer-bar">
+      <div class="carousel-progress-track" aria-hidden="true">
+        <div class="carousel-progress-fill" id="leaderProgressFill"></div>
+      </div>
+      <div class="carousel-dots" id="leaderCarouselDots" role="tablist" aria-label="Leadership slide dots">
+        <!-- Injected via JavaScript -->
       </div>
     </div>
   </div>

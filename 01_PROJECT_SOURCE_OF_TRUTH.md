@@ -54,12 +54,12 @@ Build a premium, mobile-responsive international conference website that communi
 
 **Organizing entities mentioned:**
 - Accident Prevention and Rescue Initiative (APRI), Nigeria.
-- Road Safety Driver Standard Association of The Gambia.
+- Road Safety and Driving Standard Association of The Gambia.
 - Network of Africa Road Safety NGOs appears on the reference screenshot. Its event role needs verification before publication.
 
 **People / identities:**
 - Amb. Prince Fidelis Nnadi — client identifies as Executive Director, APRI, and conference host / consultant on motor vehicle administration.
-- Njie Baldeh — client identifies as Executive Secretary, Road Safety Driver Standard Association of The Gambia; photo provided (blue shirt).
+- Njie Baldeh — client identifies as Administrative Secretary, Road Safety and Driving Standard Association of The Gambia; photo provided (blue shirt).
 - President Adama Barrow — photo provided; **do not imply endorsement, hosting, attendance or confirmed involvement** without written authorization and verification.
 - Other figures shown on promotional flyer are **not automatically confirmed speakers or participants**.
 

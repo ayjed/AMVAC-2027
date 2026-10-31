@@ -7,30 +7,79 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/constants.php';
 
-// Load .env if present
-$envFile = dirname(__DIR__) . '/.env';
-if (file_exists($envFile)) {
-    $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    foreach ($lines as $line) {
-        $line = trim($line);
-        if ($line === '' || str_starts_with($line, '#')) {
-            continue;
+// Load .env with multi-path fallback and BOM resilience
+if (!function_exists('amvac_load_env')) {
+    function amvac_load_env(): array {
+        if (!isset($GLOBALS['AMVAC_ENV'])) {
+            $GLOBALS['AMVAC_ENV'] = [];
         }
-        if (str_contains($line, '=')) {
-            [$key, $value] = explode('=', $line, 2);
-            $key = trim($key);
-            $value = trim($value, " \t\n\r\0\x0B\"'");
-            putenv("{$key}={$value}");
-            $_ENV[$key] = $value;
-            $_SERVER[$key] = $value;
+
+        $candidates = [
+            dirname(__DIR__) . '/.env',
+            dirname(__DIR__) . '/.env.production',
+            dirname(__DIR__, 2) . '/.env',
+            dirname(__DIR__) . '/public/.env',
+            __DIR__ . '/.env',
+        ];
+
+        foreach ($candidates as $candidate) {
+            if (is_file($candidate) && is_readable($candidate)) {
+                $content = file_get_contents($candidate);
+                // Strip UTF-8 BOM if present
+                $content = preg_replace('/^\xEF\xBB\xBF/', '', $content);
+                $lines = preg_split('/\r\n|\r|\n/', $content);
+
+                foreach ($lines as $line) {
+                    $line = trim($line);
+                    if ($line === '' || str_starts_with($line, '#')) {
+                        continue;
+                    }
+                    if (str_contains($line, '=')) {
+                        [$key, $value] = explode('=', $line, 2);
+                        $key = trim($key);
+                        $value = trim($value, " \t\n\r\0\x0B\"'");
+                        $GLOBALS['AMVAC_ENV'][$key] = $value;
+                        $_ENV[$key] = $value;
+                        $_SERVER[$key] = $value;
+                        @putenv("{$key}={$value}");
+                    }
+                }
+                break;
+            }
         }
+
+        return $GLOBALS['AMVAC_ENV'];
     }
 }
 
+if (!function_exists('amvac_env')) {
+    function amvac_env(string $key, mixed $default = null): mixed {
+        if (!isset($GLOBALS['AMVAC_ENV'])) {
+            amvac_load_env();
+        }
+        if (isset($GLOBALS['AMVAC_ENV'][$key]) && $GLOBALS['AMVAC_ENV'][$key] !== '') {
+            return $GLOBALS['AMVAC_ENV'][$key];
+        }
+        if (isset($_ENV[$key]) && $_ENV[$key] !== '') {
+            return $_ENV[$key];
+        }
+        if (isset($_SERVER[$key]) && $_SERVER[$key] !== '') {
+            return $_SERVER[$key];
+        }
+        $val = getenv($key);
+        if ($val !== false && $val !== '') {
+            return $val;
+        }
+        return $default;
+    }
+}
+
+amvac_load_env();
+
 // Environment Detection
-define('APP_ENV', getenv('APP_ENV') ?: 'development');
-define('APP_DEBUG', (getenv('APP_DEBUG') ?: 'true') === 'true');
-define('APP_URL', getenv('APP_URL') ?: '');
+define('APP_ENV', (string)amvac_env('APP_ENV', 'development'));
+define('APP_DEBUG', filter_var(amvac_env('APP_DEBUG', false), FILTER_VALIDATE_BOOLEAN));
+define('APP_URL', (string)amvac_env('APP_URL', ''));
 
 // Start Hardened Session
 if (session_status() === PHP_SESSION_NONE) {

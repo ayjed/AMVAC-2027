@@ -100,7 +100,7 @@
    - **Zero omissions or shortcuts**: All eight objectives rendered in full verbatim client text.
    - Objective 5 includes explicit editorial citation review note for the 300,000 road deaths figure.
 4. **Organizing Institutions:**
-   - Dedicated cards for APRI (Nigeria) and Road Safety Driver Standard Association of The Gambia.
+   - Dedicated cards for APRI (Nigeria) and Road Safety and Driving Standard Association of The Gambia.
 5. **Conference Leadership & Conveners:**
    - Full cards with leadership biographies, verified roles, and status tags.
 

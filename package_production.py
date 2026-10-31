@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 AMVAC 2027 — Linux/cPanel Compatible Production Packaging Script
-Creates a zip with explicit Unix permissions (0755 for dirs, 0644 for files)
-and Unix file attributes to prevent 'checkdir error: Permission denied' in cPanel unzip.
+Creates a zip with strict Unix permissions (0755 for dirs, 0644 for files)
+and standard Unix file attributes to prevent 'checkdir error: Permission denied' in cPanel unzip.
 """
 
 import os
@@ -79,12 +79,32 @@ def create_unix_zip():
     entries.append(("storage/", os.path.join(WORKSPACE_ROOT, "storage"), True))
     entries.append(("storage/mail/", os.path.join(WORKSPACE_ROOT, "storage", "mail"), True))
     
-    # Ensure gitkeep in storage/mail
     gitkeep_path = os.path.join(WORKSPACE_ROOT, "storage", "mail", ".gitkeep")
     if not os.path.exists(gitkeep_path):
         with open(gitkeep_path, "w") as gk:
             pass
     entries.append(("storage/mail/.gitkeep", gitkeep_path, False))
+
+    # Pre-configured production .env for seamless cPanel deployment
+    cpanel_env_content = (
+        'APP_NAME="AMVAC 2027"\n'
+        'APP_ENV=production\n'
+        'APP_DEBUG=false\n'
+        'APP_URL=http://amvac.deckify.space\n\n'
+        'DB_HOST=localhost\n'
+        'DB_PORT=3306\n'
+        'DB_NAME=deckify_amvacdb\n'
+        'DB_USER=deckify_amvacuser\n'
+        'DB_PASS=ChangeMe2027!Secure\n\n'
+        'MAIL_DRIVER=log\n'
+        'MAIL_FROM_ADDRESS="secretariat@amvac2027.org"\n'
+        'MAIL_FROM_NAME="AMVAC 2027 Secretariat"\n\n'
+        'PAYSTACK_SECRET_KEY=\n'
+        'PAYSTACK_PUBLIC_KEY=\n'
+        'PAYSTACK_SANDBOX=true\n\n'
+        'ADMIN_DEFAULT_EMAIL="admin@amvac2027.org"\n'
+        'ADMIN_DEFAULT_PASSWORD="ChangeMe2027!Secure"\n'
+    )
 
     # Collect and sort unique directory paths so parent dirs are created first
     all_dirs = set()
@@ -107,17 +127,15 @@ def create_unix_zip():
     now = time.localtime(time.time())[:6]
 
     with zipfile.ZipFile(ZIP_OUTPUT, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
-        # Write directory entries first with 0755 Unix permissions
+        # Write directory entries first with 0755 pure Unix permissions (NO DOS attributes)
         for d in sorted_dirs:
             zinfo = zipfile.ZipInfo(d, date_time=now)
             zinfo.create_system = 3  # Unix
-            # S_IFDIR (0o040000) | 0o755 (rwxr-xr-x)
+            # Pure Unix directory mode 0755
             zinfo.external_attr = (stat.S_IFDIR | 0o755) << 16
-            zinfo.external_attr |= 0x10  # DOS directory flag for cross-compatibility
             zf.writestr(zinfo, "")
-            print(f"  [DIR 0755] {d}")
 
-        # Write files with 0644 Unix permissions
+        # Write files with 0644 pure Unix permissions
         written_files = set()
         for arc_path, disk_path, is_dir in entries:
             if is_dir:
@@ -131,10 +149,15 @@ def create_unix_zip():
 
             zinfo = zipfile.ZipInfo(arc_path, date_time=now)
             zinfo.create_system = 3  # Unix
-            # S_IFREG (0o100000) | 0o644 (rw-r--r--)
+            # Pure Unix file mode 0644
             zinfo.external_attr = (stat.S_IFREG | 0o644) << 16
             zf.writestr(zinfo, file_data)
-            print(f"  [FILE 0644] {arc_path} ({len(file_data)} bytes)")
+
+        # Write pre-configured .env directly into the root of archive
+        zinfo_env = zipfile.ZipInfo(".env", date_time=now)
+        zinfo_env.create_system = 3
+        zinfo_env.external_attr = (stat.S_IFREG | 0o644) << 16
+        zf.writestr(zinfo_env, cpanel_env_content.encode("utf-8"))
 
     size = os.path.getsize(ZIP_OUTPUT)
     print(f"\nSUCCESS: Production package created at: {ZIP_OUTPUT}")

@@ -40,10 +40,10 @@ $metaDescription = 'Contact the Africa Motor Vehicle Administration Conference 2
           <div class="card-body">
             <span class="badge badge-gold" style="margin-bottom: var(--space-2);">Banjul Host Desk</span>
             <h3 style="font-size: 1.15rem; color: var(--navy-900); margin-bottom: var(--space-2);">
-              Road Safety Driver Standard Association of The Gambia
+              Road Safety and Driving Standard Association of The Gambia
             </h3>
             <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: var(--space-2);">
-              Executive Secretary: Njie Baldeh
+              Administrative Secretary: Njie Baldeh
             </p>
             <div style="font-size: 0.8125rem; color: var(--slate-500);">
               Location: Greater Banjul Area, The Gambia &bull; Host Nation Operations
