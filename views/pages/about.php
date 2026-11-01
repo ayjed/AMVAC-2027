@@ -159,16 +159,10 @@ $metaDescription = 'Learn about the mission, organizers, confirmed leadership, a
     <!-- Carousel Viewport & Horizontal Scroll Track -->
     <div class="leadership-carousel-viewport">
       <div class="leadership-carousel-track" id="leadershipTrack" tabindex="0" role="region" aria-label="Leadership profiles scroll track">
-
         <!-- Leader 1: Chairperson of the African Union -->
         <article class="leader-carousel-card" role="group" aria-roledescription="slide" aria-label="1 of 5: His Excellency Évariste Ndayishimiye">
-          <div class="leader-carousel-photo" style="--card-bg: radial-gradient(circle at 50% 30%, #D8D5CE 0%, #D0CCC4 50%, #C4BFB6 100%);">
-            <div class="leader-photo-backdrop" aria-hidden="true">
-              <img src="/assets/images/evariste-ndayishimiye.jpg" alt="" loading="lazy">
-            </div>
-            <div class="leader-photo-frame" style="--aspect: 750/1003;">
-              <img src="/assets/images/evariste-ndayishimiye.jpg" alt="His Excellency Évariste Ndayishimiye" class="leader-photo-main" width="480" height="480" loading="lazy">
-            </div>
+          <div class="leader-carousel-photo">
+            <img src="/assets/images/evariste-ndayishimiye.jpg" alt="His Excellency Évariste Ndayishimiye" width="480" height="600" loading="lazy">
           </div>
           <div class="leader-carousel-body">
             <h3 class="leader-carousel-name">His Excellency &Eacute;variste Ndayishimiye</h3>
@@ -179,13 +173,8 @@ $metaDescription = 'Learn about the mission, organizers, confirmed leadership, a
 
         <!-- Leader 2: President Adama Barrow -->
         <article class="leader-carousel-card" role="group" aria-roledescription="slide" aria-label="2 of 5: His Excellency Adama Barrow">
-          <div class="leader-carousel-photo" style="--card-bg: radial-gradient(circle at 50% 35%, #9499A2 0%, #888D96 50%, #767B84 100%);">
-            <div class="leader-photo-backdrop" aria-hidden="true">
-              <img src="/assets/images/adama-barrow.jpg" alt="" loading="lazy">
-            </div>
-            <div class="leader-photo-frame" style="--aspect: 450/610;">
-              <img src="/assets/images/adama-barrow.jpg" alt="His Excellency Adama Barrow" class="leader-photo-main" width="480" height="480" loading="lazy">
-            </div>
+          <div class="leader-carousel-photo">
+            <img src="/assets/images/adama-barrow.jpg" alt="His Excellency Adama Barrow" width="480" height="600" loading="lazy">
           </div>
           <div class="leader-carousel-body">
             <h3 class="leader-carousel-name">His Excellency Adama Barrow</h3>
@@ -196,13 +185,8 @@ $metaDescription = 'Learn about the mission, organizers, confirmed leadership, a
 
         <!-- Leader 3: Nigeria FRSC Corps Marshal -->
         <article class="leader-carousel-card" role="group" aria-roledescription="slide" aria-label="3 of 5: Corps Marshal Shehu Mohammed">
-          <div class="leader-carousel-photo" style="--card-bg: linear-gradient(to right, rgba(46, 175, 115, 0.12) 0%, #FFFFFF 25%, #FFFFFF 75%, rgba(68, 126, 188, 0.14) 100%);">
-            <div class="leader-photo-backdrop" aria-hidden="true">
-              <img src="/assets/images/shehu-mohammed.jpg" alt="" loading="lazy">
-            </div>
-            <div class="leader-photo-frame" style="--aspect: 395/497;">
-              <img src="/assets/images/shehu-mohammed.jpg" alt="Corps Marshal Shehu Mohammed" class="leader-photo-main" width="480" height="480" loading="lazy">
-            </div>
+          <div class="leader-carousel-photo">
+            <img src="/assets/images/shehu-mohammed.jpg" alt="Corps Marshal Shehu Mohammed" width="480" height="600" loading="lazy">
           </div>
           <div class="leader-carousel-body">
             <h3 class="leader-carousel-name">Shehu Mohammed, <span style="font-size: 0.9em; font-weight: 500;">FCA, CPFA, mni</span></h3>
@@ -213,13 +197,8 @@ $metaDescription = 'Learn about the mission, organizers, confirmed leadership, a
 
         <!-- Leader 4: Amb. Prince Fidelis Nnadi -->
         <article class="leader-carousel-card" role="group" aria-roledescription="slide" aria-label="4 of 5: Amb. Prince Fidelis Nnadi">
-          <div class="leader-carousel-photo" style="--card-bg: radial-gradient(circle at 50% 35%, #2E3038 0%, #222329 50%, #17181C 100%);">
-            <div class="leader-photo-backdrop" aria-hidden="true">
-              <img src="/assets/images/fidelis-nnadi.jpg" alt="" loading="lazy">
-            </div>
-            <div class="leader-photo-frame" style="--aspect: 1/1;">
-              <img src="/assets/images/fidelis-nnadi.jpg" alt="Amb. Prince Fidelis Nnadi" class="leader-photo-main" width="480" height="480" loading="lazy">
-            </div>
+          <div class="leader-carousel-photo">
+            <img src="/assets/images/fidelis-nnadi.jpg" alt="Amb. Prince Fidelis Nnadi" width="480" height="600" loading="lazy">
           </div>
           <div class="leader-carousel-body">
             <h3 class="leader-carousel-name">Amb. Prince Fidelis Nnadi</h3>
@@ -230,13 +209,8 @@ $metaDescription = 'Learn about the mission, organizers, confirmed leadership, a
 
         <!-- Leader 5: Njie Baldeh -->
         <article class="leader-carousel-card" role="group" aria-roledescription="slide" aria-label="5 of 5: Njie Baldeh">
-          <div class="leader-carousel-photo" style="--card-bg: radial-gradient(circle at 50% 35%, #7C8494 0%, #6E7584 50%, #5B6270 100%);">
-            <div class="leader-photo-backdrop" aria-hidden="true">
-              <img src="/assets/images/njie-baldeh.jpg" alt="" loading="lazy">
-            </div>
-            <div class="leader-photo-frame" style="--aspect: 1/1;">
-              <img src="/assets/images/njie-baldeh.jpg" alt="Njie Baldeh" class="leader-photo-main" width="480" height="480" loading="lazy">
-            </div>
+          <div class="leader-carousel-photo">
+            <img src="/assets/images/njie-baldeh.jpg" alt="Njie Baldeh" width="480" height="600" loading="lazy">
           </div>
           <div class="leader-carousel-body">
             <h3 class="leader-carousel-name">Njie Baldeh</h3>
@@ -244,7 +218,6 @@ $metaDescription = 'Learn about the mission, organizers, confirmed leadership, a
             <p class="leader-carousel-role">Road Safety and Driving Standard Association of The Gambia (Host Association Co-Organizer).</p>
           </div>
         </article>
-
       </div>
     </div>
 
