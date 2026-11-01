@@ -8,32 +8,50 @@ $pageTitle = 'AMVAC 2027 — Africa Motor Vehicle Administration Conference';
 ?>
 
 <!-- 1. Hero Section -->
-<section class="hero-section">
-  <div class="container">
+<section class="hero-section" aria-label="AMVAC 2027 Conference Hero">
+  <!-- Dedicated Background Image Layer -->
+  <div class="hero-bg-layer" aria-hidden="true">
+    <img 
+      src="/assets/images/amvac-conference-background.webp" 
+      alt="AMVAC Conference Stage" 
+      class="hero-bg-img" 
+      width="1024" 
+      height="550" 
+      fetchpriority="high"
+    >
+  </div>
+
+  <!-- Dedicated Separate CSS Overlay Layer -->
+  <div class="hero-overlay-layer" aria-hidden="true"></div>
+
+  <!-- Foreground Content Layer -->
+  <div class="container hero-container">
     <div class="hero-content">
       <h1 class="hero-title">
-        Africa Motor Vehicle<br>
-        Administration<br>
+        <span class="hero-title-line">Africa Motor Vehicle</span>
+        <span class="hero-title-line">Administration</span>
         <span class="hero-title-accent">Conference 2027</span>
       </h1>
       <p class="hero-desc">Advancing road safety, security, and economic integration across Africa.</p>
 
-      <div class="hero-meta-grid">
-        <div class="hero-meta-item">
+      <div class="hero-meta-row" role="list" aria-label="Conference Event Details">
+        <div class="hero-meta-item" role="listitem">
           <!-- Calendar Icon -->
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
           </svg>
           <span><?= e(AMVAC_DATES) ?></span>
         </div>
-        <div class="hero-meta-item">
+        <span class="hero-meta-divider" aria-hidden="true"></span>
+        <div class="hero-meta-item" role="listitem">
           <!-- Map Pin Icon -->
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
           </svg>
           <span><?= e(AMVAC_LOCATION) ?></span>
         </div>
-        <div class="hero-meta-item">
+        <span class="hero-meta-divider" aria-hidden="true"></span>
+        <div class="hero-meta-item" role="listitem">
           <!-- Globe / Hybrid Icon -->
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
@@ -44,51 +62,6 @@ $pageTitle = 'AMVAC 2027 — Africa Motor Vehicle Administration Conference';
     </div>
   </div>
 </section>
-
-<!-- 2. Three Pillar Highlights Strip -->
-<div class="container highlights-strip">
-  <div class="highlights-grid">
-    <div class="highlight-card">
-      <div class="highlight-icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-          <path d="M12 8v8"></path>
-        </svg>
-      </div>
-      <div>
-        <div class="highlight-title">Safer African Roads</div>
-        <div class="highlight-desc">Reducing road crashes and saving lives through harmonized vehicle inspection standards across Africa.</div>
-      </div>
-    </div>
-
-    <div class="highlight-card">
-      <div class="highlight-icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-        </svg>
-      </div>
-      <div>
-        <div class="highlight-title">Stronger Security</div>
-        <div class="highlight-desc">Integrated vehicle data across AU states to combat cross-border theft, smuggling and crime.</div>
-      </div>
-    </div>
-
-    <div class="highlight-card">
-      <div class="highlight-icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="20" x2="18" y2="10"></line>
-          <line x1="12" y1="20" x2="12" y2="4"></line>
-          <line x1="6" y1="20" x2="6" y2="14"></line>
-        </svg>
-      </div>
-      <div>
-        <div class="highlight-title">Greater Economic Integration</div>
-        <div class="highlight-desc">Harmonised licensing and assembly systems to unlock revenue and accelerate African growth.</div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- 3. Editorial Introduction Section -->
 <section class="intro-section">

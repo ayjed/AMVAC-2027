@@ -3,63 +3,97 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. Homepage: Hero Section (Approved Half-Sided Conference Stage Design)
+   1. Homepage: Hero Section (Refined Immersive Cinematic Layout)
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
-  background-color: #031123;
-  background-image: 
-    linear-gradient(90deg, rgba(3, 17, 35, 0.97) 0%, rgba(3, 17, 35, 0.94) 28%, rgba(3, 17, 35, 0.78) 42%, rgba(3, 17, 35, 0.25) 56%, transparent 68%),
-    url('/assets/images/amvac-conference-background.webp');
-  background-size: cover;
-  background-position: right center;
-  background-repeat: no-repeat;
+  background-color: #030F20;
   color: var(--white);
-  padding: var(--space-16) 0 var(--space-20);
-  border-bottom: 2px solid var(--gold-500);
-  overflow: hidden;
-  min-height: 520px;
+  min-height: clamp(560px, 80vh, 740px);
   display: flex;
   align-items: center;
+  overflow: hidden;
+  border-bottom: 2px solid var(--gold-500);
 }
 
-@media (max-width: 991px) {
-  .hero-section {
-    background-image: 
-      linear-gradient(90deg, rgba(3, 17, 35, 0.98) 0%, rgba(3, 17, 35, 0.95) 45%, rgba(3, 17, 35, 0.70) 70%, rgba(3, 17, 35, 0.35) 100%),
-      url('/assets/images/amvac-conference-background.webp');
-    background-position: right center;
-    padding: var(--space-12) 0 var(--space-16);
-    min-height: 480px;
+/* Background Image Layer */
+.hero-bg-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  transform-origin: center right;
+  animation: heroBgZoom 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform;
+}
+
+/* Separate CSS Overlay Layer */
+.hero-overlay-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(3,15,32,0.97) 0%, rgba(3,15,32,0.94) 28%, rgba(3,15,32,0.78) 42%, rgba(3,15,32,0.35) 55%, rgba(3,15,32,0) 70%);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-overlay-layer {
+    background: linear-gradient(90deg, rgba(3,15,32,0.98) 0%, rgba(3,15,32,0.95) 38%, rgba(3,15,32,0.76) 62%, rgba(3,15,32,0.25) 82%, rgba(3,15,32,0) 100%);
   }
 }
 
 @media (max-width: 768px) {
   .hero-section {
-    background-image: 
-      linear-gradient(180deg, rgba(3, 17, 35, 0.97) 0%, rgba(3, 17, 35, 0.92) 65%, rgba(3, 17, 35, 0.60) 100%),
-      url('/assets/images/amvac-conference-background.webp');
-    background-position: center top;
-    padding: var(--space-10) 0 var(--space-14);
     min-height: auto;
+    padding: var(--space-12) 0 var(--space-14);
+    display: block;
+  }
+
+  .hero-bg-img {
+    object-position: center top;
+  }
+
+  .hero-overlay-layer {
+    background: linear-gradient(180deg, rgba(3,15,32,0.98) 0%, rgba(3,15,32,0.93) 58%, rgba(3,15,32,0.60) 100%);
   }
 }
 
-.hero-content {
-  max-width: 620px;
+/* Foreground Container & Content */
+.hero-container {
   position: relative;
-  z-index: 2;
+  z-index: 3;
+  width: 100%;
 }
 
+.hero-content {
+  max-width: 600px;
+}
+
+/* Headline */
 .hero-title {
   color: var(--white);
   font-family: var(--font-sans);
-  font-size: clamp(2.35rem, 5vw, 3.75rem);
-  line-height: 1.12;
+  font-size: clamp(2.4rem, 4.8vw, 3.85rem);
+  line-height: 1.1;
   font-weight: 800;
-  margin-bottom: var(--space-4);
-  letter-spacing: -0.025em;
-  text-wrap: balance;
+  letter-spacing: -0.03em;
+  margin: 0 0 var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-title-line {
+  color: #FFFFFF;
 }
 
 .hero-title-accent {
@@ -67,114 +101,110 @@
   font-style: normal;
   font-weight: 800;
   color: #E9BA4B;
-  display: inline-block;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
+/* Description */
 .hero-desc {
-  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  font-family: var(--font-sans);
+  font-size: clamp(1.05rem, 1.7vw, 1.25rem);
   line-height: 1.55;
-  color: #FFFFFF;
-  margin-bottom: var(--space-6);
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0 0 var(--space-7);
+  max-width: 500px;
   font-weight: 400;
-  max-width: 520px;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.18s forwards;
 }
 
-.hero-meta-grid {
-  display: flex;
+/* Event Information Row */
+.hero-meta-row {
+  display: inline-flex;
   flex-wrap: wrap;
-  gap: var(--space-3) var(--space-6);
-  padding-top: var(--space-5);
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
-  margin-bottom: 0;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  padding: 0.55rem 1.15rem;
+  background: rgba(3, 15, 32, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(233, 186, 75, 0.32);
+  border-radius: var(--radius-full);
+  opacity: 0;
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.36s forwards;
+}
+
+@media (min-width: 1024px) {
+  .hero-meta-row {
+    flex-wrap: nowrap;
+  }
 }
 
 .hero-meta-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  font-size: 0.9375rem;
-  color: var(--white);
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  color: #FFFFFF;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .hero-meta-item svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   color: #E9BA4B;
   flex-shrink: 0;
 }
 
-/* --------------------------------------------------------------------------
-   2. Homepage: Highlights Strip (3 Pillars)
-   -------------------------------------------------------------------------- */
-.highlights-strip {
-  position: relative;
-  z-index: 20;
-  margin-top: var(--space-6);
-  margin-bottom: var(--space-8);
-}
-
-@media (min-width: 900px) {
-  .highlights-strip {
-    margin-top: -64px;
-    margin-bottom: var(--space-12);
-  }
-}
-.highlights-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
-}
-
-@media (min-width: 900px) {
-  .highlights-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.highlight-card {
-  background: #0B1E38;
-  color: var(--white);
-  border: 1px solid rgba(201, 162, 74, 0.28);
-  border-radius: var(--radius-md);
-  padding: var(--space-6);
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-4);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
-}
-
-.highlight-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--gold-400);
-}
-
-.highlight-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-sm);
-  background-color: rgba(201, 162, 74, 0.12);
-  border: 1px solid rgba(201, 162, 74, 0.25);
-  color: var(--gold-400);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero-meta-divider {
+  width: 4px;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: rgba(233, 186, 75, 0.6);
   flex-shrink: 0;
 }
 
-.highlight-title {
-  color: var(--gold-400);
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: var(--space-1);
+@media (max-width: 640px) {
+  .hero-meta-row {
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-3);
+    gap: var(--space-2) var(--space-3);
+  }
+  .hero-meta-divider {
+    display: none;
+  }
+}
+/* Restrained Premium Keyframe Animations */
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.highlight-desc {
-  font-size: 0.84rem;
-  color: var(--slate-300);
-  line-height: 1.45;
+@keyframes heroBgZoom {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg-img,
+  .hero-title,
+  .hero-desc,
+  .hero-meta-row {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* --------------------------------------------------------------------------
