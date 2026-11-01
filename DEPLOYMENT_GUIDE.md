@@ -175,11 +175,13 @@ server {
    - `https://yourdomain.org/programme` (Programme & Venue)
    - `https://yourdomain.org/register` (Delegate Registration)
    - `https://yourdomain.org/contact` (Contact & Inquiry Form)
-2. **Test Admin Portal**:
-   - URL: `https://yourdomain.org/admin/login`
-   - Initial Email: `admin@amvac2027.org`
-   - Initial Password: `ChangeMe2027!Secure`
-   - **Action Required:** Change this password immediately upon first login!
+2. **Create Administrator Account & Test Admin Portal**:
+   - Create your production administrator account with a strong passphrase:
+     ```bash
+     php database/create_admin.php "admin@amvac2027.org" "YourChosenStrongPassword"
+     ```
+   - Access the portal at `https://yourdomain.org/admin/login`
+   - Log in using your configured credentials to verify session management and dashboard access.
 3. **Test Security Headers**:
    - Check headers with browser DevTools or `curl -I`:
      - `X-Content-Type-Options: nosniff`

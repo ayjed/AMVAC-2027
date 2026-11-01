@@ -1,9 +1,11 @@
+import os
 import urllib.request
 import re
 
+BASE_URL = os.environ.get("TEST_BASE_URL", os.environ.get("APP_URL", "http://localhost:8000")).rstrip("/")
 routes = ['/', '/about', '/programme', '/register', '/contact']
 for r in routes:
-    html = urllib.request.urlopen('http://127.0.0.1:8000' + r).read().decode('utf-8')
+    html = urllib.request.urlopen(f"{BASE_URL}{r}").read().decode('utf-8')
     h1s = re.findall(r'<h1[^>]*>(.*?)</h1>', html, re.DOTALL)
     imgs = re.findall(r'<img[^>]*>', html)
     imgs_no_alt = [img for img in imgs if 'alt=' not in img]

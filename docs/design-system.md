@@ -72,7 +72,7 @@
    - Dedicated "Register Now" button with immediate contrast.
    - Mobile: High-contrast compact hamburger transforming into 'X' close icon with full ARIA support.
 2. **Hero Section:**
-   - Editorial dark atmosphere blending deep navy gradient into a genuine assembly photograph (`hero-conference.jpg`).
+   - Editorial dark atmosphere blending deep navy gradient into a genuine assembly photograph (`mvac-conference-background.webp`).
    - Eyebrow badge: "1ST CONTINENTAL POLICY CONFERENCE".
    - Display title in gold serif typography: "AFRICA MOTOR VEHICLE ADMINISTRATION CONFERENCE 2027".
    - Verbatim canonical theme in crisp off-white text.

@@ -3,7 +3,8 @@ import urllib.parse
 import json
 import re
 
-BASE_URL = "http://127.0.0.1:8000"
+import os
+BASE_URL = os.environ.get("TEST_BASE_URL", os.environ.get("APP_URL", "http://localhost:8000")).rstrip("/")
 
 def run_test(name, assertion, details=""):
     if assertion:

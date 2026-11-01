@@ -89,7 +89,9 @@ class Auth {
         ");
         $updateStmt->execute([':id' => $admin['id']]);
 
-        session_regenerate_id(true);
+        if (!headers_sent()) {
+            session_regenerate_id(true);
+        }
         $_SESSION['admin_id'] = (int)$admin['id'];
         $_SESSION['admin_user'] = [
             'id'    => (int)$admin['id'],
@@ -107,7 +109,7 @@ class Auth {
             AuditService::log('admin', (string)self::id(), 'LOGOUT', 'auth', (string)self::id());
         }
         $_SESSION = [];
-        if (ini_get("session.use_cookies")) {
+        if (!headers_sent() && ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
             setcookie(session_name(), '', time() - 42000,
                 $params["path"], $params["domain"],

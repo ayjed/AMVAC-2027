@@ -13,9 +13,9 @@ if (!function_exists('amvac_env')) {
 $dbConfig = [
     'host'     => (string)amvac_env('DB_HOST', 'localhost'),
     'port'     => (int)amvac_env('DB_PORT', 3306),
-    'database' => (string)amvac_env('DB_NAME', 'deckify_amvacdb'),
-    'username' => (string)amvac_env('DB_USER', 'deckify_amvacuser'),
-    'password' => (string)amvac_env('DB_PASS', 'ChangeMe2027!Secure'),
+    'database' => (string)amvac_env('DB_NAME', 'amvac2027'),
+    'username' => (string)amvac_env('DB_USER', 'root'),
+    'password' => (string)amvac_env('DB_PASS', ''),
     'charset'  => 'utf8mb4',
     'options'  => [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,

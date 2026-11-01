@@ -1,6 +1,7 @@
 -- AMVAC 2027 Database Seed Data
 
--- Default Super Administrator (admin@amvac2027.org / ChangeMe2027!Secure)
+-- Local Development Administrator (admin@amvac2027.org)
+-- Run `php database/create_admin.php` to set or rotate administrative passwords
 INSERT INTO admins (name, email, password_hash, role, is_active)
 VALUES (
     'AMVAC Lead Administrator',

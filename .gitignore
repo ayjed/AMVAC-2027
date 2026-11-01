@@ -1,0 +1,58 @@
+# ==============================================================================
+# AMVAC 2027 — Git Ignore Configuration
+# ==============================================================================
+
+# Environment & Sensitive Credentials (Keep locally, never push to GitHub)
+.env
+.env.backup
+.env.local
+*.env
+!.env.example
+!.env.production.example
+
+# Local Mock Mail, Application Logs & Temporary Storage
+storage/mail/*.json
+storage/logs/*.log
+storage/cache/*
+storage/temp/*
+!storage/**/.gitkeep
+!storage/.htaccess
+
+# Build Archives, Release ZIPs & Production Packages
+*.zip
+*.tar.gz
+*.tgz
+dist/
+build/
+
+# Local Image Backups & Raw Design Dumps
+public/assets/images/backup_portraits/
+Images/
+
+# Test Screenshots & Visual Artifacts
+public/assets/screenshots/
+*.png.bak
+screen_*.png
+test_*.png
+slice_*.png
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE, Editor & Workspace Configs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# Python Bytecode & Cache (used by build/test scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+

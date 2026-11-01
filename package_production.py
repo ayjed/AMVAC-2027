@@ -70,6 +70,8 @@ def create_unix_zip():
             entries.append((arc_prefix + "/", full_sub, True))
             for root, dirs, files in os.walk(full_sub):
                 for f in files:
+                    if 'backup_portraits' in root or 'backup_portraits' in f:
+                        continue
                     full_f = os.path.join(root, f)
                     rel_to_sub = os.path.relpath(full_f, full_sub).replace("\\", "/")
                     arc_f = f"{arc_prefix}/{rel_to_sub}".replace("//", "/")
@@ -95,15 +97,17 @@ def create_unix_zip():
         'DB_PORT=3306\n'
         'DB_NAME=deckify_amvacdb\n'
         'DB_USER=deckify_amvacuser\n'
-        'DB_PASS=ChangeMe2027!Secure\n\n'
+        'DB_PASS=\n\n'
+        '# Transactional Email\n'
         'MAIL_DRIVER=log\n'
         'MAIL_FROM_ADDRESS="secretariat@amvac2027.org"\n'
         'MAIL_FROM_NAME="AMVAC 2027 Secretariat"\n\n'
+        '# Payment Gateway (Configure when merchant keys are issued)\n'
         'PAYSTACK_SECRET_KEY=\n'
         'PAYSTACK_PUBLIC_KEY=\n'
         'PAYSTACK_SANDBOX=true\n\n'
+        '# Setup admin via: php database/create_admin.php <email> <password>\n'
         'ADMIN_DEFAULT_EMAIL="admin@amvac2027.org"\n'
-        'ADMIN_DEFAULT_PASSWORD="ChangeMe2027!Secure"\n'
     )
 
     # Collect and sort unique directory paths so parent dirs are created first

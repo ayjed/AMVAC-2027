@@ -187,17 +187,15 @@ CREATE TABLE IF NOT EXISTS `email_logs` (
 -- INITIAL SEED DATA
 -- ==============================================================================
 
--- Default Super Administrator
--- Default credentials: admin@amvac2027.org / ChangeMe2027!Secure
--- MUST be updated on first login via the Admin Portal
-INSERT INTO `admins` (`name`, `email`, `password_hash`, `role`, `is_active`)
-VALUES (
-    'AMVAC Lead Administrator',
-    'admin@amvac2027.org',
-    '$2y$10$pxiIvScNJY6igvWkIugnNuBPucxrkL00XlEQCMRS96yb3gEjvwUZq',
-    'super_admin',
-    1
-) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`);
+-- Administrator Setup Instructions
+-- For production security, no default administrator password is pre-configured
+-- in this installation file. Create your initial administrator account securely
+-- from the command line using:
+--
+--     php database/create_admin.php "admin@amvac2027.org" "YourSecurePasswordHere"
+--
+-- This generates a fresh, unique BCRYPT hash (cost 12) directly inside your
+-- environment without exposing credentials in repository files or version control.
 
 -- Default System Settings
 INSERT INTO `settings` (`setting_key`, `setting_value`, `description`, `is_sensitive`) VALUES

@@ -81,8 +81,8 @@ define('APP_ENV', (string)amvac_env('APP_ENV', 'development'));
 define('APP_DEBUG', filter_var(amvac_env('APP_DEBUG', false), FILTER_VALIDATE_BOOLEAN));
 define('APP_URL', (string)amvac_env('APP_URL', ''));
 
-// Start Hardened Session
-if (session_status() === PHP_SESSION_NONE) {
+// Start Hardened Session (Web requests only)
+if (session_status() === PHP_SESSION_NONE && php_sapi_name() !== 'cli') {
     ini_set('session.use_strict_mode', '1');
     ini_set('session.cookie_httponly', '1');
     ini_set('session.cookie_samesite', 'Lax');
