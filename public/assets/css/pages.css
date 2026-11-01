@@ -3,76 +3,90 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. Homepage: Hero Section
+   1. Homepage: Hero Section (Approved Half-Sided Conference Stage Design)
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
-  background-color: var(--navy-950);
+  background-color: #031123;
   background-image: 
-    linear-gradient(180deg, rgba(6, 19, 37, 0.88) 0%, rgba(9, 29, 56, 0.94) 100%),
-    url('/assets/images/hero-conference.jpg');
+    linear-gradient(90deg, rgba(3, 17, 35, 0.97) 0%, rgba(3, 17, 35, 0.94) 28%, rgba(3, 17, 35, 0.78) 42%, rgba(3, 17, 35, 0.25) 56%, transparent 68%),
+    url('/assets/images/amvac-conference-background.webp');
   background-size: cover;
-  background-position: center top;
+  background-position: right center;
+  background-repeat: no-repeat;
   color: var(--white);
-  padding: var(--space-12) 0 var(--space-16);
+  padding: var(--space-16) 0 var(--space-20);
   border-bottom: 2px solid var(--gold-500);
+  overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 991px) {
   .hero-section {
-    padding: var(--space-16) 0 var(--space-20);
+    background-image: 
+      linear-gradient(90deg, rgba(3, 17, 35, 0.98) 0%, rgba(3, 17, 35, 0.95) 45%, rgba(3, 17, 35, 0.70) 70%, rgba(3, 17, 35, 0.35) 100%),
+      url('/assets/images/amvac-conference-background.webp');
+    background-position: right center;
+    padding: var(--space-12) 0 var(--space-16);
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    background-image: 
+      linear-gradient(180deg, rgba(3, 17, 35, 0.97) 0%, rgba(3, 17, 35, 0.92) 65%, rgba(3, 17, 35, 0.60) 100%),
+      url('/assets/images/amvac-conference-background.webp');
+    background-position: center top;
+    padding: var(--space-10) 0 var(--space-14);
+    min-height: auto;
   }
 }
 
 .hero-content {
-  max-width: 860px;
-}
-
-.hero-eyebrow {
-  display: inline-block;
-  color: var(--gold-400);
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: var(--space-3);
+  max-width: 620px;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-title {
   color: var(--white);
   font-family: var(--font-sans);
-  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
-  line-height: 1.14;
+  font-size: clamp(2.35rem, 5vw, 3.75rem);
+  line-height: 1.12;
   font-weight: 800;
   margin-bottom: var(--space-4);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
 .hero-title-accent {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 700;
-  color: var(--gold-400);
-  letter-spacing: normal;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 800;
+  color: #E9BA4B;
   display: inline-block;
+  letter-spacing: -0.02em;
 }
 
-.hero-theme {
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
-  line-height: 1.5;
-  color: var(--slate-100);
+.hero-desc {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  line-height: 1.55;
+  color: #FFFFFF;
   margin-bottom: var(--space-6);
   font-weight: 400;
+  max-width: 520px;
 }
 
 .hero-meta-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-4) var(--space-8);
-  margin-bottom: var(--space-8);
-  padding: var(--space-4) 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  gap: var(--space-3) var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  margin-bottom: 0;
 }
 
 .hero-meta-item {
@@ -85,28 +99,28 @@
 }
 
 .hero-meta-item svg {
-  width: 20px;
-  height: 20px;
-  color: var(--gold-400);
+  width: 18px;
+  height: 18px;
+  color: #E9BA4B;
   flex-shrink: 0;
-}
-
-.hero-cta-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-4);
 }
 
 /* --------------------------------------------------------------------------
    2. Homepage: Highlights Strip (3 Pillars)
    -------------------------------------------------------------------------- */
 .highlights-strip {
-  margin-top: -64px;
   position: relative;
   z-index: 20;
-  margin-bottom: var(--space-12);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-8);
 }
 
+@media (min-width: 900px) {
+  .highlights-strip {
+    margin-top: -64px;
+    margin-bottom: var(--space-12);
+  }
+}
 .highlights-grid {
   display: grid;
   grid-template-columns: 1fr;
