@@ -94,21 +94,35 @@ img {
   max-width: var(--container-max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--space-4);
-  padding-right: var(--space-4);
+  padding-left: 1.375rem;
+  padding-right: 1.375rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .container {
-    padding-left: var(--space-6);
-    padding-right: var(--space-6);
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .container {
-    padding-left: var(--space-8);
-    padding-right: var(--space-8);
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    padding-left: max(0px, calc(4.5rem - (100vw - 1440px) * 0.3));
+    padding-right: max(0px, calc(4.5rem - (100vw - 1440px) * 0.3));
+  }
+}
+
+@media (min-width: 1680px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

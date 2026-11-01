@@ -42,71 +42,82 @@ $metaDescription = 'Explore the thematic focus tracks, venue details in Banjul, 
 </section>
 
 <!-- Projected Thematic Focus Tracks (Derived from Approved Objectives) -->
-<section style="padding: var(--space-12) 0; background-color: var(--surface-light); border-bottom: 1px solid var(--slate-200);">
+<section class="programme-tracks-section" id="tracks" aria-labelledby="tracksHeading">
+  <span id="programme-tracks" class="anchor-target" aria-hidden="true"></span>
   <div class="container">
     <div class="section-header-block">
       <div class="section-eyebrow">Conference Structure</div>
-      <h2 class="section-title">Thematic Focus Tracks</h2>
-      <p style="color: var(--slate-600);">
+      <h2 class="section-title" id="tracksHeading">Thematic Focus Tracks</h2>
+      <p class="section-subtitle">
         Structured tracks addressing vehicle administration reform across five key policy domains.
       </p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-6);">
+    <div class="programme-tracks-grid">
       <!-- Track 1 -->
-      <div class="card">
-        <div class="card-body">
-          <span class="badge badge-gold" style="margin-bottom: var(--space-2);">Track 1</span>
-          <h3 style="font-size: 1.15rem; color: var(--navy-900); margin-bottom: var(--space-2);">Continental Vehicle Database & Biometric Integration</h3>
-          <p style="color: var(--slate-600); font-size: 0.875rem;">
+      <article class="programme-track-card">
+        <div class="track-card-body">
+          <div class="track-badge-wrapper">
+            <span class="track-badge">Track 1</span>
+          </div>
+          <h3 class="track-card-title">Continental Vehicle Database &amp; Biometric Integration</h3>
+          <p class="track-card-desc">
             Examining cloud-native registries, interoperable biometric authentication, and centralized databases to ensure vehicle traceability across AU jurisdictions.
           </p>
         </div>
-      </div>
+      </article>
 
       <!-- Track 2 -->
-      <div class="card">
-        <div class="card-body">
-          <span class="badge badge-gold" style="margin-bottom: var(--space-2);">Track 2</span>
-          <h3 style="font-size: 1.15rem; color: var(--navy-900); margin-bottom: var(--space-2);">Harmonized Vehicle Inspection & Roadworthiness</h3>
-          <p style="color: var(--slate-600); font-size: 0.875rem;">
+      <article class="programme-track-card">
+        <div class="track-card-body">
+          <div class="track-badge-wrapper">
+            <span class="track-badge">Track 2</span>
+          </div>
+          <h3 class="track-card-title">Harmonized Vehicle Inspection &amp; Roadworthiness</h3>
+          <p class="track-card-desc">
             Establishing standardized mechanical inspection protocols, computerized test lanes, and emissions benchmarks to rid African corridors of unroadworthy vehicles.
           </p>
         </div>
-      </div>
+      </article>
 
       <!-- Track 3 -->
-      <div class="card">
-        <div class="card-body">
-          <span class="badge badge-gold" style="margin-bottom: var(--space-2);">Track 3</span>
-          <h3 style="font-size: 1.15rem; color: var(--navy-900); margin-bottom: var(--space-2);">Cross-Border Anti-Theft & Security Collaboration</h3>
-          <p style="color: var(--slate-600); font-size: 0.875rem;">
+      <article class="programme-track-card">
+        <div class="track-card-body">
+          <div class="track-badge-wrapper">
+            <span class="track-badge">Track 3</span>
+          </div>
+          <h3 class="track-card-title">Cross-Border Anti-Theft &amp; Security Collaboration</h3>
+          <p class="track-card-desc">
             Facilitating real-time data feeds connecting transport departments with Police, Customs, FRSC, Immigration, and Interpol to curb cross-border theft and transit smuggling.
           </p>
         </div>
-      </div>
+      </article>
 
       <!-- Track 4 -->
-      <div class="card">
-        <div class="card-body">
-          <span class="badge badge-gold" style="margin-bottom: var(--space-2);">Track 4</span>
-          <h3 style="font-size: 1.15rem; color: var(--navy-900); margin-bottom: var(--space-2);">Driver Licensing Standards & Public Enlightenment</h3>
-          <p style="color: var(--slate-600); font-size: 0.875rem;">
+      <article class="programme-track-card">
+        <div class="track-card-body">
+          <div class="track-badge-wrapper">
+            <span class="track-badge">Track 4</span>
+          </div>
+          <h3 class="track-card-title">Driver Licensing Standards &amp; Public Enlightenment</h3>
+          <p class="track-card-desc">
             Unified curriculum for professional driving schools, standardized licensing exams, and transforming public perception of vehicle administration into life-saving civic duty.
           </p>
         </div>
-      </div>
+      </article>
 
       <!-- Track 5 -->
-      <div class="card">
-        <div class="card-body">
-          <span class="badge badge-gold" style="margin-bottom: var(--space-2);">Track 5</span>
-          <h3 style="font-size: 1.15rem; color: var(--navy-900); margin-bottom: var(--space-2);">Industrial Vehicle Assembly & Domestic Number Plate Plants</h3>
-          <p style="color: var(--slate-600); font-size: 0.875rem;">
+      <article class="programme-track-card">
+        <div class="track-card-body">
+          <div class="track-badge-wrapper">
+            <span class="track-badge">Track 5</span>
+          </div>
+          <h3 class="track-card-title">Industrial Vehicle Assembly &amp; Domestic Number Plate Plants</h3>
+          <p class="track-card-desc">
             Economic diversification, unlocking tariff revenue under AfCFTA, and promoting local assembly plants and secure license plate manufacturing hubs across the continent.
           </p>
         </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>
