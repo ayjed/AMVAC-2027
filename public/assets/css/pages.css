@@ -586,22 +586,29 @@
 .leader-carousel-photo {
   position: relative;
   width: 100%;
-  height: 220px;
+  height: 290px;
   background: var(--slate-100);
   overflow: hidden;
   border-bottom: 2px solid var(--gold-500);
+}
+
+@media (max-width: 640px) {
+  .leader-carousel-photo {
+    height: 280px;
+  }
 }
 
 .leader-carousel-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center top;
+  transform-origin: center top;
   transition: transform 0.5s ease;
 }
 
 .leader-carousel-card:hover .leader-carousel-photo img {
-  transform: scale(1.03);
+  transform: scale(1.025);
 }
 
 .leader-carousel-body {

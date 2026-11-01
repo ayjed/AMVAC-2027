@@ -133,7 +133,7 @@ $metaDescription = 'Learn about the mission, organizers, confirmed leadership, a
   <div class="container">
     <div class="leadership-header-row">
       <div class="leadership-header-content">
-        <div class="section-eyebrow">Conveners &amp; Leadership</div>
+        <div class="section-eyebrow">CONVENERS &amp; LEADERSHIP</div>
         <h2 class="section-title">Continental Leadership</h2>
         <p class="section-subtitle">
           Distinguished Leaders &amp; Invited Dignitaries driving road safety administration and continental transport policy.
